@@ -2,7 +2,6 @@ import mysql from 'mysql2'
 import { promisify } from 'util'
 import { DB } from './keys'
 import delay from 'delay'
-import { connect } from 'http2'
 
 // Método usado para crear "hilos" y cada uno irá haciendo una tarea a la vez en secuencia
 const pool = mysql.createPool(DB.database)
@@ -30,7 +29,7 @@ pool.getConnection((error, connection) => {
                 connec = err[1]
                 err = err[2].code
             }
-            connection.release()
+            connec.release()
             console.log(`Connected to the database ${DB.database.database}`)
         }            
     }
