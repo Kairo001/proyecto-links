@@ -10,5 +10,5 @@ Para ejecutar el proyecto primero se debe crear la imagen del servidor por medio
 
 Donde <nombre_imagen> es el nombre de la imagen del servidor que se quiera colocar.
 Posteriormente se deben ejecutar los dos siguientes comandos:
-- doker-compose build
+- docker-compose build
 - docker-compose up
