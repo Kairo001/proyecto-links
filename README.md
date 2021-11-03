@@ -3,3 +3,4 @@ Este es un proyecto de backend, en el cual se usa el entorno nodejs junto al fra
 El gestor de base de datos usado es mysql, en el cual se tiene una base de datos con dos tablas, tanto para el almacenamiento de usuarios y enlaces.
 
 Además, para la correcta implementación del entorno de producción se usa Docker, creando una imagen del servidor por medio del archivo Dockerfile y luego enlazando esta con la imagen de mysql por medio de una red de trabajo creada por dockercompose.
+

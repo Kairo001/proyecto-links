@@ -6,8 +6,6 @@ services:
     image: nodemyen
     ports:
       - 3000:3000
-    volumenes: 
-      - .:/usr/src/app
     environment:
       JWT_SECRET: secretjwtyk0
       HOST_MYSQL: mysql

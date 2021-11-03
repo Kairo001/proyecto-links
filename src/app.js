@@ -11,8 +11,8 @@ import helmet from 'helmet'
 import { createLinks, createUsers } from './lib/createTables'
 
 // Inicializaciones
-createLinks()
 createUsers()
+createLinks()
 const app = express()
 
 // Configuraciones
