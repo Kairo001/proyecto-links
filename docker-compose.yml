@@ -6,6 +6,8 @@ services:
     image: nodemyen
     ports:
       - 3000:3000
+    depends_on:
+      - mysql
     environment:
       JWT_SECRET: secretjwtyk0
       HOST_MYSQL: mysql
