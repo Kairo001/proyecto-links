@@ -8,6 +8,7 @@ services:
       - 3000:3000
     depends_on:
       - mysql
+      condition: service_healthy
     environment:
       JWT_SECRET: secretjwtyk0
       HOST_MYSQL: mysql
@@ -22,3 +23,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: database_links
+    healthcheck:
+      test: ["CMD", "mysql", "--user=root", "--password=secret", "-e", "'SHOW DATABASES;'"]
+      interval: 3s
+      timeout: 30s
+      retries: 10

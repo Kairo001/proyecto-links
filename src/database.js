@@ -18,8 +18,10 @@ pool.getConnection((error, connection) => {
         }
     }
 
-    if (connection) connection.release()
-    console.log(`Connected to the database ${DB.database.database}`)
+    if (connection) {
+        connection.release()
+        console.log(`Connected to the database ${DB.database.database}`)
+    }
     return
 })
 
