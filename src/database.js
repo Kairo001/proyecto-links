@@ -14,8 +14,15 @@ pool.getConnection((error, connection) => {
             console.error('Database has to many connections')
         }
         if(error.code === 'ECONNREFUSED'){
-            console.error('Database connection was refused')
-        }
+            let err = error.code
+            while(err === "ECONNREFUSED"){
+                pool.getConnection((erro, connection) => {
+                    if(erro){
+                        err = erro.code
+                    }
+                })
+            }
+        }            
     }
 
     if (connection) {
