@@ -1,0 +1,38 @@
+{
+  "name": "myern-app",
+  "version": "1.0.0",
+  "description": "Esta es el backend usado en mi primer página web",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx nodemon --exec babel-node src/index.js",
+    "dev1": "babel-node src/index.js",
+    "build": "babel src --out-dir build",
+    "start": "node build/index.js"
+  },
+  "keywords": [],
+  "author": "Albeiro Núñez",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.1",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "rate-limiter-flexible": "^2.2.4",
+    "redis": "^3.1.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/node": "^7.14.7",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.14.8",
+    "nodemon": "^2.0.12"
+  }
+}

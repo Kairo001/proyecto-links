@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+
+  app:
+    image: nodemyen
+    ports:
+      - 3000:3000
+    volumenes: 
+      - .:/usr/src/app
+    environment:
+      JWT_SECRET: secretjwtyk0
+      HOST_MYSQL: mysql
+      USER_MYSQL: root
+      PASSWORD_MYSQL: secret
+      NAME_DATABASE: database_links
+    
+  mysql:
+    image: mysql:8.0.26
+    volumes:
+      - ./links_database:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: database_links
