@@ -9,7 +9,7 @@ const pool = mysql.createPool(DB.database)
 const waitconnection = async () => {
     await delay(2000)
     pool.getConnection((erro, connection) => {
-        return [erro, connection]
+        return [connection, erro]
     })
 }
 
@@ -26,8 +26,11 @@ pool.getConnection((error, connection) => {
             let connec = connection
             while(err === "ECONNREFUSED"){
                 err = waitconnection()
-                connec = err[1]
-                err = err[2].code
+                connec = err[0]
+                if(!err[1]){
+                    break
+                }
+                err = err[1].code 
             }
             connec.release()
             console.log(`Connected to the database ${DB.database.database}`)
