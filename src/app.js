@@ -8,11 +8,10 @@ import routes_authentification from './routes/authentication'
 import passport from 'passport'
 import middlewaresPassport from './middlewares/passport'
 import helmet from 'helmet'
-import { createLinks, createUsers } from './lib/createTables'
+import { createTabless } from './lib/createTables'
 
 // Inicializaciones
-createUsers()
-createLinks()
+createTabless()
 const app = express()
 
 // Configuraciones
